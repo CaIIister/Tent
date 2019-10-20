@@ -1,0 +1,26 @@
+#include "iostream"
+#include "cmath"
+using namespace std;
+int main()
+{
+	float x1, x2; //корені квадратного рівняння//
+	float a, b, c; //коефіцієнти квадратного рівняння//
+	float D, sqrtD;//Дискримінант і його корінь//
+	float sqrb; //квадрат коефіцієнту b//
+	cout << "a=";
+	cin >> a;
+	cout << "b=";
+	cin >> b;
+	cout << "c=";
+	cin >> c;
+	sqrb = powl(b, 2);
+	D = (sqrb) -( 4 * a * c);
+	sqrtD = powl(D, 0.5);
+	cout << "D=" << D<<"\n";
+	x1 = (-b + sqrtD) /( 2 * a);
+	x2 = (-b - sqrtD) / (2 * a);
+	cout << "x1=" << x1<<"\n" << "x2=" << x2;
+	cout << "\n";
+	system("pause");
+	return 0;
+}
