@@ -1,0 +1,73 @@
+#include "iostream"
+using namespace std;
+int main()
+{
+	float x, y;
+	float b1, b2;
+	float a11, a12, a21, a22;
+	float deltaA, deltaX, deltaY;
+	cout << "Input coefitients First equation:\n";
+	cout << "a11=";
+	cin >> a11;
+	cout << "a12=";
+	cin >> a12;
+	cout << "Free number:";
+	cin >> b1;
+	cout << "Input coefitients second equation:\n";
+	cout << "a21=";
+	cin >> a21;
+	cout << "a22=";
+	cin >> a22;
+	cout << "Free number:";
+	cin >> b2;
+	deltaA = a11 * a22 - a12 * a21;
+	deltaX = b1 * a22 - b2 * a12;
+	deltaY = a11 * b2 - a21 * b1;
+	x = deltaX / deltaA;
+	y = deltaY / deltaA;
+	cout << "Solution of Equatuion:(" << x << ";" << y << ")\n";
+	if (a12 < 0)
+		if (a11 < 0)
+			if ((a11 == -1) || (a12 == -1))
+				if ((a11 == -1) && (a12 != -1))
+					cout << "-x" << a12 << "y=" << b1 << "\n";
+	            if ((a11 != -1) && (a12 == -1))
+		            cout << a11 << "x" << "-" << "y=" << b1 << "\n";
+				if ((a11==-1)&&(a12==-1))
+					cout << "-x" << "-" << "y=" << b1 << "\n";
+			    if ((a11!=-1)&&(a12!=-1))
+				    cout << a11 << "x"<< a12 << "y=" << b1 << "\n";
+		if (a11>0)
+			if ((a11==1)||(a12==-1))
+				if ((a11 == 1) && (a12 != -1))
+					cout << "x" << a12 << "y=" << b1<<"\n";
+		        if ((a11 != 1) && (a12 == -1))
+			        cout << a11 << "x" << "-" << "y=" << b1 << "\n";
+		        if ((a11 == 1) && (a12 == -1))
+			        cout << "x" << "-" << "y=" << b1 << "\n";
+				if ((a11 != 1) && (a12 != -1))
+					cout << a11 << "x" << a12 << "y=" << b1 << "\n";
+	if (a12>0)
+		if (a11 < 0)
+			if ((a11 == -1) || (a12 == 1))
+				if ((a11 == -1) && (a12 != 1))
+					cout << "-x" <<"+"<< a12 << "y=" << b1 << "\n";
+	            if ((a11 != -1) && (a12 == 1))
+		            cout << a11 << "x" << "+" << "y=" << b1 << "\n";
+	            if ((a11 == -1) && (a12 == 1))
+		            cout << "-x" << "+" << "y=" << b1 << "\n";
+	            if ((a11 != -1) && (a12 != 1))
+		            cout << a11 << "x" <<"+"<< a12 << "y=" << b1 << "\n";
+	    if (a11 > 0)
+		    if ((a11 == 1) || (a12 == 1))
+			    if ((a11 == 1) && (a12 != 1))
+				    cout << "x" <<"+"<< a12 << "y=" << b1 << "\n";
+	            if ((a11 != 1) && (a12 == 1))
+		            cout << a11 << "x" << "+" << "y=" << b1 << "\n";
+	            if ((a11 == 1) && (a12 == 1))
+		            cout << "x" << "+" << "y=" << b1 << "\n";
+	            if ((a11 != 1) && (a12 != 1))
+		            cout << a11 << "x" <<"+"<< a12 << "y=" << b1 << "\n";
+	system("pause");
+	return 0;
+}
