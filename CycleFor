@@ -1,0 +1,30 @@
+#include "iostream"
+using namespace std;
+int main()
+{
+	int Count;
+	int Temp;
+	int C_Zero=0;
+	int C_Positive=0;
+	int C_Negative=0;
+	float S = 0;
+	cout << "Count of Numbers=";
+	cin >> Count;
+	for (int i = 0; i < Count; i++)
+	{
+		cout << "Temp=";
+		cin >> Temp;
+		if (Temp == 0) C_Zero++;
+		if (Temp > 0) C_Positive++;
+		if (Temp < 0) C_Negative++;
+		S += Temp;
+	}
+	if (Count != 0) S = S / Count;
+	cout << "Results:\n";
+	cout << "Count of Positive=" << C_Positive << "\n";
+	cout << "Count of Negative=" << C_Negative << "\n";
+	cout << "Count of Zero=" << C_Zero << "\n";
+	cout << "Average=" << S << "\n";
+	system("Pause");
+	return 0;
+}
