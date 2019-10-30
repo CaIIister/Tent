@@ -1,0 +1,23 @@
+#include "iostream";
+using namespace std;
+int main()
+{
+	float x;
+	float eps;
+	float u=1;
+	float sum = 0;
+	int i = 0;
+	cout << "eps=";
+	cin >> eps;
+	cout << "x=";
+	cin >> x;
+	while (fabs(u) > eps)
+	{
+		sum += u;
+		u *= ((-1)*x*x) / ((2 * i + 2)*(2 * i + 1));
+		i++;
+	}
+	cout << "s=" << sum << "\ncos" << x << "=" << cos(x) << "\n";
+	system("Pause");
+	return 0;
+}
