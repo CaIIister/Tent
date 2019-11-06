@@ -1,0 +1,50 @@
+#include "iostream"
+using namespace std;
+int main()
+{
+	int Mas[10];
+	int Count=10;
+	int Positive = 0;
+	int Negative = 0;
+	int Zero = 0;
+	for (int i = 0; i < Count; i++)
+	{
+		cout << "Mas[" << i << "]=";
+		cin >> Mas[i];
+		cout << " ";
+	}
+	cout << "\n";
+	for (int i = 0; i < Count; i++)
+	{
+		cout << Mas[i]<<" ";
+	}
+	cout << "\n";
+	for (int i = 0; i < Count; i++)
+	{
+		if (Mas[i] > 0) Positive++;
+		if (Mas[i] == 0) Zero++;
+		if (Mas[i] < 0) Negative++;
+	}
+	if (Mas[Count / 2] == 0)
+	{
+		for (int i = 0; i < (Count / 2); i++)
+		{
+			Mas[i] *= -1;
+		}
+		for (int i = (Count / 2 + 1); i < Count; i++)
+		{
+			Mas[i] = pow(Mas[i], 2);
+		}
+	}
+	for (int i = 0; i < Count; i++)
+	{
+		cout << Mas[i] << " ";
+	}
+
+	cout << "\nCount of Positive numbers=" << Positive;
+	cout << "\nCount of Zero numbers=" << Zero;
+	cout << "\nCount of Negative numbers=" << Negative;
+	cout << "\n";
+	system("Pause");
+	return 0;
+}
