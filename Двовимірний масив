@@ -1,0 +1,68 @@
+#include "iostream"
+using namespace std;
+int main()
+{
+	float Average = 0;
+	int pos;
+	int k = 0;
+	int Mas[3][3];
+	int Count = 3;
+	for (int i = 0; i < Count; i++)
+		for (int j = 0; j < Count; j++)
+		{
+			cout << "EL[" << i << "][" << j << "]=";
+			cin >> Mas[i][j];
+		}
+	int maxrow = Mas[0][0];
+	int minrow = Mas[0][0];
+	int maxcolumn = Mas[0][0];
+	int mincolumn = Mas[0][0];
+	for (int i = 0; i < Count; i++)
+	{
+		for (int j = 0; j < Count; j++)
+		{
+			cout << Mas[i][j] << " ";
+			Average += Mas[i][j];
+			k++;
+		}
+		cout << endl;
+	}
+	Average /= k;
+	cout << "Average number=" << Average<<endl;
+	for (int i = 0; i < Count; i++)
+	{
+		for (int k = 0; k < Count; k++)
+		{
+			for (int j = 0; j <Count-1-k; j++)
+			{
+				if (Mas[i][j] > Mas[i][j+1])
+				{
+					pos = Mas[i][j];
+					Mas[i][j] = Mas[i][j + 1];
+					Mas[i][j + 1] = pos;
+				}
+			}
+		}
+	}
+	for (int i = 0; i < Count; i++)
+	{
+		for (int j = 0; j < Count; j++)
+		{
+			if (maxrow < Mas[i][j]) maxrow = Mas[i][j];
+			if (minrow > Mas[i][j]) minrow = Mas[i][j];
+			if (maxcolumn < Mas[j][i]) maxcolumn = Mas[j][i];
+			if (mincolumn > Mas[j][i]) mincolumn = Mas[j][i];
+		}
+		cout << "maxrow=" << maxrow << "\nminrow=" << minrow << "\nmaxcolumn=" << maxcolumn << "\nmincolumn=" << mincolumn << endl;
+	}
+	for (int i = 0; i < Count; i++)
+	{
+		for (int j = 0; j < Count; j++)
+		{
+			cout << Mas[i][j] << " ";
+		}
+		cout << endl;
+	}
+	system("Pause");
+	return 0;
+}
